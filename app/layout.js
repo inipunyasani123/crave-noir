@@ -6,10 +6,10 @@ import Footer from "@/components/Footer";
 const display = Inter_Tight({ subsets: ["latin"], variable: "--font-display", weight: ["700","800","900"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-const __jsonld = {"@context":"https://schema.org","@type":"CreativeWork","name":"Positive Crave — Konsep Noir","description":"Landing page brand keintiman","url":"https://crave-noir.vercel.app"};
+const __jsonld = {"@context":"https://schema.org","@type":"CreativeWork","name":"Positive Crave — Konsep Noir","description":"Landing page brand keintiman","url":"https://crave-noir.pintuweb.id"};
 
 export const metadata = {
-  metadataBase: new URL("https://crave-noir.vercel.app"),
+  metadataBase: new URL("https://crave-noir.pintuweb.id"),
   title: "Positive Crave — Konsep Noir",
   description: "Landing page Positive Crave konsep \"Noir\": intimacy essentials untuk pasangan — berani, playful, dan percaya diri.",
   applicationName: "Positive Crave",
@@ -17,11 +17,11 @@ export const metadata = {
   authors: [{ name: "Positive Crave" }],
   creator: "Positive Crave",
   publisher: "Positive Crave",
-  alternates: { canonical: "https://crave-noir.vercel.app" },
+  alternates: { canonical: "https://crave-noir.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://crave-noir.vercel.app",
+    url: "https://crave-noir.pintuweb.id",
     siteName: "Positive Crave",
     title: "Positive Crave — Konsep Noir",
     description: "Landing page Positive Crave konsep \"Noir\": intimacy essentials untuk pasangan — berani, playful, dan percaya diri.",

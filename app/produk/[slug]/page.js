@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import ProductCard from '@/components/ProductCard'
 import { PENGIRIM, PRODUK, labelSituasi, produkBySlug, rupiah } from '@/lib/katalog'
 
-const SITE = 'https://crave-noir.vercel.app'
+const SITE = 'https://crave-noir.pintuweb.id'
 
 export function generateStaticParams() {
   return PRODUK.map((p) => ({ slug: p.slug }))

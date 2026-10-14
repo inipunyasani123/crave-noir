@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Koleksi — Positive Crave',
   description:
     'Seluruh koleksi Positive Crave, disaring menurut situasi: untuk berdua, baru pertama, jarak jauh, dan perawatan. Semua dikirim dalam kotak cokelat polos.',
-  alternates: { canonical: 'https://crave-noir.vercel.app/koleksi' },
+  alternates: { canonical: 'https://crave-noir.pintuweb.id/koleksi' },
 }
 
 const itemList = {
@@ -16,7 +16,7 @@ const itemList = {
   itemListElement: PRODUK.map((p, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    url: `https://crave-noir.vercel.app/produk/${p.slug}`,
+    url: `https://crave-noir.pintuweb.id/produk/${p.slug}`,
     name: p.nama,
   })),
 }

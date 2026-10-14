@@ -2,7 +2,7 @@
 
 Landing page Positive Crave konsep "Noir": intimacy essentials untuk pasangan — berani, playful, dan percaya diri.
 
-**Demo live:** https://crave-noir.vercel.app
+**Demo live:** https://crave-noir.pintuweb.id
 
 ![Tangkapan layar Positive Crave](public/og.jpg)
 

@@ -1,7 +1,7 @@
 import { PRODUK } from '@/lib/katalog'
 import { ARSIP } from '@/lib/arsip'
 
-const SITE = 'https://crave-noir.vercel.app'
+const SITE = 'https://crave-noir.pintuweb.id'
 
 export default function sitemap() {
   const now = new Date()

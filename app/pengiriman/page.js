@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Perjalanan Kotak Polos — Positive Crave',
   description:
     'Dari gudang sampai pintu rumah: apa yang dilihat kurir, penghuni rumah, rekening bank, dan kotak masuk Anda saat memesan di Positive Crave.',
-  alternates: { canonical: 'https://crave-noir.vercel.app/pengiriman' },
+  alternates: { canonical: 'https://crave-noir.pintuweb.id/pengiriman' },
 }
 
 const LANGKAH = [

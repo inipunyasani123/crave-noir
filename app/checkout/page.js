@@ -4,7 +4,7 @@ import CheckoutPage from '@/components/CheckoutPage'
 export const metadata = {
   title: 'Pemesanan — Positive Crave',
   description: 'Selesaikan pemesanan Anda. Paket dikirim dalam kotak polos tanpa nama merek, ke rumah, kantor, loker, atau agen.',
-  alternates: { canonical: 'https://crave-noir.vercel.app/checkout' },
+  alternates: { canonical: 'https://crave-noir.pintuweb.id/checkout' },
   robots: { index: false, follow: true },
 }
 

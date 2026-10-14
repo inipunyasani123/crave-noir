@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Arsip — Positive Crave',
   description:
     'Tulisan Positive Crave tentang hal yang biasanya dibisikkan: apa yang tertulis di resi, cara membuka obrolan dengan pasangan, dan memilih material yang benar-benar aman.',
-  alternates: { canonical: 'https://crave-noir.vercel.app/jurnal' },
+  alternates: { canonical: 'https://crave-noir.pintuweb.id/jurnal' },
 }
 
 export default function ArsipPage() {

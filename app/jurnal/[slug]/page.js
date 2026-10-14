@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ARSIP, arsipBySlug } from '@/lib/arsip'
 
-const SITE = 'https://crave-noir.vercel.app'
+const SITE = 'https://crave-noir.pintuweb.id'
 
 export function generateStaticParams() {
   return ARSIP.map((a) => ({ slug: a.slug }))
