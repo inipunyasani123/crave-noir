@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { ARSIP } from '@/lib/arsip'
+import { meta } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Arsip — Positive Crave',
+export const metadata = meta({
+  title: 'Arsip',
   description:
-    'Tulisan Positive Crave tentang hal yang biasanya dibisikkan: apa yang tertulis di resi, cara membuka obrolan dengan pasangan, dan memilih material yang benar-benar aman.',
-  alternates: { canonical: 'https://crave-noir.pintuweb.id/jurnal' },
-}
+    'Tulisan Positive Crave tentang hal yang biasanya dibisikkan: isi resi, cara membuka obrolan dengan pasangan, dan memilih material yang benar-benar aman.',
+  path: '/jurnal',
+})
 
 export default function ArsipPage() {
   return (

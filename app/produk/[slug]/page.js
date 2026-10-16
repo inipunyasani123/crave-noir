@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ProductCard from '@/components/ProductCard'
 import { PENGIRIM, PRODUK, labelSituasi, produkBySlug, rupiah } from '@/lib/katalog'
-
-const SITE = 'https://crave-noir.pintuweb.id'
+import { meta, SITE } from '@/lib/seo'
 
 export function generateStaticParams() {
   return PRODUK.map((p) => ({ slug: p.slug }))
@@ -14,12 +13,10 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
   const p = produkBySlug(slug)
   if (!p) return {}
-  return {
-    title: `${p.nama} — Positive Crave`,
-    description: `${p.ringkas} Dikirim dalam kotak cokelat polos ${p.kotak.ukuran}, tanpa nama merek di resi.`,
-    alternates: { canonical: `${SITE}/produk/${p.slug}` },
-    openGraph: { images: [{ url: p.image }] },
-  }
+  // Deskripsi lengkap bila muat 155 karakter; bila tidak, cukup ringkasan + kotak polos.
+  const panjang = `${p.ringkas} Dikirim dalam kotak cokelat polos ${p.kotak.ukuran}, tanpa nama merek di resi.`
+  const pendek = `${p.ringkas} Dikirim dalam kotak cokelat polos.`
+  return meta({ title: p.nama, description: panjang.length <= 155 ? panjang : pendek.length <= 155 ? pendek : p.ringkas, path: `/produk/${p.slug}` })
 }
 
 export default async function ProdukPage({ params }) {

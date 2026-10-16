@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import LihatSebagai from '@/components/LihatSebagai'
-import { PENGIRIM } from '@/lib/katalog'
+import { meta } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Perjalanan Kotak Polos — Positive Crave',
+export const metadata = meta({
+  title: 'Perjalanan Kotak Polos',
   description:
     'Dari gudang sampai pintu rumah: apa yang dilihat kurir, penghuni rumah, rekening bank, dan kotak masuk Anda saat memesan di Positive Crave.',
-  alternates: { canonical: 'https://crave-noir.pintuweb.id/pengiriman' },
-}
+  path: '/pengiriman',
+})
 
 const LANGKAH = [
-  { no: '01', judul: 'Anda memesan', isi: 'Pembayaran diproses atas nama ' + PENGIRIM + '. Konfirmasi dikirim dengan subjek berisi nomor pesanan saja.', waktu: 'Menit ke-0' },
+  { no: '01', judul: 'Anda memesan', isi: 'Pembayaran diproses atas nama badan usaha induk, bukan nama toko. Konfirmasi dikirim dengan subjek berisi nomor pesanan saja.', waktu: 'Menit ke-0' },
   { no: '02', judul: 'Dikemas', isi: 'Barang masuk kantong satin hitam, lalu kotak cokelat polos dari tiga ukuran standar yang juga dipakai toko pakaian.', waktu: '< 24 jam' },
   { no: '03', judul: 'Diserahkan ke kurir', isi: 'Kurir hanya menerima alamat dan keterangan "perlengkapan pribadi". Tidak ada daftar isi yang ikut berpindah tangan.', waktu: 'Hari ke-1' },
   { no: '04', judul: 'Tiba', isi: 'Ke rumah, kantor, loker paket, atau agen kurir — Anda yang memilih saat checkout. Tulis "tanpa bel" bila perlu.', waktu: 'Hari ke-2–4' },

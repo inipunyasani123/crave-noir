@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { PENGIRIM } from '@/lib/katalog'
 
 /* "Lihat sebagai" — tiap pihak yang bersinggungan dengan paket, dan persis apa
    yang mereka lihat. Visual tiruan dibuat dari CSS saja (tanpa gambar). */
@@ -10,7 +9,7 @@ const SUDUT = [
   {
     id: 'kurir',
     label: 'Kurir',
-    lihat: ['Nama & alamat penerima', `Pengirim: ${PENGIRIM}`, 'Isi: perlengkapan pribadi', 'Berat paket'],
+    lihat: ['Nama & alamat penerima', 'Pengirim: badan usaha induk', 'Isi: perlengkapan pribadi', 'Berat paket'],
     tidak: ['Nama merek', 'Nama barang', 'Harga'],
   },
   {
@@ -22,13 +21,13 @@ const SUDUT = [
   {
     id: 'rekening',
     label: 'Mutasi rekening',
-    lihat: [`Penerima dana: ${PENGIRIM}`, 'Nominal transaksi'],
+    lihat: ['Penerima dana: badan usaha induk', 'Nominal transaksi'],
     tidak: ['Nama Positive Crave', 'Nama barang'],
   },
   {
     id: 'surel',
     label: 'Kotak masuk',
-    lihat: ['Subjek dengan nomor pesanan', 'Nama pengirim: Sinar Kreasi'],
+    lihat: ['Subjek dengan nomor pesanan', 'Nama pengirim: badan usaha induk'],
     tidak: ['Nama barang di subjek', 'Surel promosi tanpa izin'],
   },
   {
@@ -47,9 +46,11 @@ function Tiruan({ id }) {
         <div className="absolute right-4 bottom-4 left-10 bg-chalk p-4 text-void">
           <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase opacity-75">Kirim ke</p>
           <p className="mt-1 text-sm font-bold">Ibu/Bapak penerima</p>
-          <p className="text-xs opacity-70">Jl. Contoh No. 00, Kota</p>
+          <span aria-hidden="true" className="redact mt-1.5 block h-2 w-4/5 text-void/30" />
+          <span aria-hidden="true" className="redact mt-1 block h-2 w-1/2 text-void/30" />
+          <span className="sr-only">Alamat penerima</span>
           <div className="mt-3 grid grid-cols-2 gap-2 border-t border-void/15 pt-2 text-[0.65rem]">
-            <p><span className="block font-bold tracking-wider uppercase opacity-75">Dari</span>{PENGIRIM}</p>
+            <p><span className="block font-bold tracking-wider uppercase opacity-75">Dari</span><span aria-hidden="true" className="redact mt-1 block h-2 w-full text-void/45" /><span className="sr-only">Badan usaha induk</span></p>
             <p><span className="block font-bold tracking-wider uppercase opacity-75">Isi</span>Perlengkapan pribadi</p>
           </div>
         </div>
@@ -70,11 +71,21 @@ function Tiruan({ id }) {
         <p className="micro mb-4 text-ash">Mutasi · 12 Okt</p>
         {[
           ['TRF ONLINE', 'PLN PASCABAYAR', '- 412.500'],
-          ['TRF ONLINE', PENGIRIM.toUpperCase(), '- 1.315.000'],
+          ['TRF ONLINE', null, '- 1.315.000'],
           ['SETOR', 'GAJI OKTOBER', '+ 8.750.000'],
         ].map(([a, b, c]) => (
-          <div key={b} className={`flex justify-between gap-3 border-t border-chalk/10 py-2.5 ${b.startsWith('PT') ? 'text-neon' : ''}`}>
-            <span className="min-w-0"><span className="block opacity-75">{a}</span><span className="block truncate">{b}</span></span>
+          <div key={b || 'induk'} className={`flex justify-between gap-3 border-t border-chalk/10 py-2.5 ${b ? '' : 'text-neon'}`}>
+            <span className="min-w-0">
+              <span className="block opacity-75">{a}</span>
+              {b ? (
+                <span className="block truncate">{b}</span>
+              ) : (
+                <>
+                  <span aria-hidden="true" className="redact mt-1 block h-2.5 w-36 opacity-80" />
+                  <span className="sr-only">Badan usaha induk</span>
+                </>
+              )}
+            </span>
             <span className="shrink-0">{c}</span>
           </div>
         ))}
@@ -84,12 +95,12 @@ function Tiruan({ id }) {
     return (
       <div className="mx-auto w-full max-w-sm border border-chalk/15 bg-chalk text-void">
         {[
-          ['Sinar Kreasi', 'Pesanan #PC-2381 sudah dikirim', true],
+          [null, 'Pesanan #PC-2381 sudah dikirim', true],
           ['Kantor', 'Undangan rapat Kamis', false],
           ['Bank', 'e-Statement Oktober', false],
         ].map(([a, b, x]) => (
           <div key={b} className={`border-b border-void/10 px-4 py-3 text-xs ${x ? 'bg-neon/10' : ''}`}>
-            <p className="font-bold">{a}</p>
+            {a ? <p className="font-bold">{a}</p> : <><span aria-hidden="true" className="redact block h-2.5 w-24 opacity-70" /><span className="sr-only">Badan usaha induk</span></>}
             <p className="opacity-70">{b}</p>
           </div>
         ))}

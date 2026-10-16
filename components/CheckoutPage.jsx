@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { PENGIRIM, PRODUK, produkBySlug, rupiah } from '@/lib/katalog'
+import { PRODUK, produkBySlug, rupiah } from '@/lib/katalog'
 
 const ONGKIR = 25000
 
@@ -147,7 +147,10 @@ export default function CheckoutPage() {
             </dl>
             <div className="border-t border-chalk/10 p-6">
               <p className="micro mb-3 text-ash">Di mutasi rekening tertulis</p>
-              <p className="font-mono text-sm text-chalk">{PENGIRIM.toUpperCase()}</p>
+              <p className="flex items-center gap-3 font-mono text-sm text-chalk">
+                <span aria-hidden="true" className="redact h-3.5 w-28 text-chalk/60" />
+                <span className="text-xs text-ash">nama badan usaha induk</span>
+              </p>
               <p className="micro mt-5 mb-3 text-ash">Di resi tertulis</p>
               <p className="text-sm text-chalk">Perlengkapan pribadi · {p.kotak.berat}</p>
             </div>

@@ -6,12 +6,12 @@ import Footer from "@/components/Footer";
 const display = Inter_Tight({ subsets: ["latin"], variable: "--font-display", weight: ["700","800","900"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-const __jsonld = {"@context":"https://schema.org","@type":"CreativeWork","name":"Positive Crave — Konsep Noir","description":"Landing page brand keintiman","url":"https://crave-noir.pintuweb.id"};
+const __jsonld = {"@context":"https://schema.org","@type":"CreativeWork","name":"Positive Crave — Konsep Noir","description":"Konsep desain toko brand keintiman pasangan bertema Tanpa Label, dibuat untuk kontes brief Positive Crave","url":"https://crave-noir.pintuweb.id"};
 
 export const metadata = {
   metadataBase: new URL("https://crave-noir.pintuweb.id"),
   title: "Positive Crave — Konsep Noir",
-  description: "Landing page Positive Crave konsep \"Noir\": intimacy essentials untuk pasangan — berani, playful, dan percaya diri.",
+  description: "Konsep toko Positive Crave bertema Tanpa Label: koleksi per situasi, kotak cokelat polos, dan halaman yang memperlihatkan apa yang dilihat kurir.",
   applicationName: "Positive Crave",
   keywords: ["intimacy brand", "wellness pasangan", "landing page", "desain web", "positive crave"],
   authors: [{ name: "Positive Crave" }],
@@ -22,15 +22,15 @@ export const metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://crave-noir.pintuweb.id",
-    siteName: "Positive Crave",
+    siteName: "Positive Crave — Konsep Noir",
     title: "Positive Crave — Konsep Noir",
-    description: "Landing page Positive Crave konsep \"Noir\": intimacy essentials untuk pasangan — berani, playful, dan percaya diri.",
+    description: "Konsep toko Positive Crave bertema Tanpa Label: koleksi per situasi, kotak cokelat polos, dan halaman yang memperlihatkan apa yang dilihat kurir.",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Positive Crave — Konsep Noir" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Positive Crave — Konsep Noir",
-    description: "Landing page Positive Crave konsep \"Noir\": intimacy essentials untuk pasangan — berani, playful, dan percaya diri.",
+    description: "Konsep toko Positive Crave bertema Tanpa Label: koleksi per situasi, kotak cokelat polos, dan halaman yang memperlihatkan apa yang dilihat kurir.",
     images: ["/og.jpg"],
   },
   robots: {

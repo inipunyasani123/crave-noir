@@ -115,3 +115,12 @@ h3 {
   outline: 2px solid var(--color-neon);
   outline-offset: 3px;
 }
+
+/* Baris geser di ponsel: bilah gulir disembunyikan; kartu berikutnya yang
+   mengintip di tepi kanan sudah menjadi petunjuk bahwa barisnya bisa digeser. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

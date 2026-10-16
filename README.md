@@ -40,8 +40,8 @@ Foto hero berlisensi **CC0 (domain publik)**: bebas dipakai, termasuk untuk kome
 
 - `public/images/hero.webp` — "Couple Love" oleh Morgan Sessions, StockSnap, CC0 ([sumber](https://stocksnap.io/photo/couple-love-AAM8X0DRXY)). Dipotong ke 4:5.
 - `public/images/kategori-berdua.webp` — "Free couple holding hand image", rawpixel, CC0 ([sumber](https://www.rawpixel.com/image/5927571/photo-image-public-domain-hands-women)). Dipotong ke 4:5.
-- `public/images/minyak-pijat.webp` — ilustrasi buatan sendiri untuk purwarupa ini.
-- Foto produk lainnya (`p2`–`p8`, `p14`) belum terverifikasi asal-usulnya. Ganti dengan foto produk asli klien sebelum situs dipakai sungguhan.
+- `public/images/minyak-pijat.webp` dan `public/images/produk/*.webp` — ilustrasi buatan sendiri untuk purwarupa ini (menggantikan foto produk yang asal-usulnya tidak terverifikasi). Ganti dengan foto produk asli klien sebelum situs dipakai sungguhan.
+- Varian WebP di `public/_img/` dibuat dari gambar-gambar di atas oleh `scripts/static-images.mjs`.
 
 ---
 

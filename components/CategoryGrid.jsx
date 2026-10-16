@@ -4,16 +4,16 @@ import { PRODUK, SITUASI } from '@/lib/katalog'
 
 const FOTO = {
   berdua: '/images/kategori-berdua.webp',
-  pertama: '/images/p2.jpg',
-  jarak: '/images/p8.jpg',
-  perawatan: '/images/p14.jpeg',
+  pertama: '/images/produk/bullet.webp',
+  jarak: '/images/produk/remote.webp',
+  perawatan: '/images/produk/pelumas.webp',
 }
 
 export default function CategoryGrid() {
   return (
-    <section id="kategori" className="relative overflow-hidden bg-void py-20 md:py-28">
+    <section id="kategori" className="relative overflow-hidden bg-void py-16 md:py-28">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between md:mb-12">
           <div className="max-w-xl">
             <p className="micro mb-5 text-neon">Menurut situasi</p>
             <h2 className="text-[2rem] leading-[1.1] md:text-[2.7rem]">Mulai dari yang mana?</h2>

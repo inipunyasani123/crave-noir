@@ -8,7 +8,7 @@ import Link from 'next/link'
    ========================================================================== */
 
 const surat = [
-  ['Nama pengirim', 'PT Sinar Kreasi Mandiri'],
+  ['Nama pengirim', 'Badan usaha induk, bukan nama toko'],
   ['Isi paket', 'Perlengkapan pribadi'],
   ['Logo merek', 'Tidak ada'],
   ['Keterangan lain', 'Tidak ada'],
@@ -23,11 +23,11 @@ const jaminan = [
 
 export default function PlainBox() {
   return (
-    <section id="privasi" className="relative overflow-hidden bg-void py-20 md:py-28">
+    <section id="privasi" className="relative overflow-hidden bg-void py-16 md:py-28">
       <div aria-hidden="true" className="dim-glow absolute inset-x-0 top-0 h-64" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl md:mb-14">
           <p className="micro mb-5 text-neon">Privasi</p>
           <h2 className="text-[2rem] leading-[1.1] md:text-[2.7rem]">
             Yang sampai ke rumah Anda cuma{' '}

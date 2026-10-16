@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -18,6 +18,8 @@ const aktif = (pathname, href) => !href.startsWith('/#') && (pathname === href |
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const panelRef = useRef(null)
+  const tombolRef = useRef(null)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -28,14 +30,30 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Laci menu: kunci scroll, fokus pindah ke dalam laci dan berputar di
+  // dalamnya (Tab / Shift+Tab), Escape menutup, lalu fokus kembali ke tombol menu.
   useEffect(() => {
     if (!open) return
-    const onKey = (e) => e.key === 'Escape' && setOpen(false)
+    const tombol = tombolRef.current
+    const fokusan = () =>
+      Array.from(panelRef.current?.querySelectorAll('a[href], button') ?? [])
+    const t = window.setTimeout(() => fokusan()[0]?.focus(), 30)
+    const onKey = (e) => {
+      if (e.key === 'Escape') return setOpen(false)
+      if (e.key !== 'Tab') return
+      const el = fokusan()
+      if (!el.length) return
+      const awal = el[0], akhir = el[el.length - 1]
+      if (e.shiftKey && document.activeElement === awal) { e.preventDefault(); akhir.focus() }
+      else if (!e.shiftKey && document.activeElement === akhir) { e.preventDefault(); awal.focus() }
+    }
     document.addEventListener('keydown', onKey)
     document.body.style.overflow = 'hidden'
     return () => {
+      window.clearTimeout(t)
       document.removeEventListener('keydown', onKey)
       document.body.style.overflow = ''
+      tombol?.focus()
     }
   }, [open])
 
@@ -75,6 +93,7 @@ export default function Navbar() {
         </nav>
 
         <button
+          ref={tombolRef}
           className="-mr-2 p-2 text-chalk md:hidden"
           onClick={() => setOpen(true)}
           aria-label="Buka menu"
@@ -94,7 +113,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
             />
-            <motion.div
+            <motion.div ref={panelRef}
               className="fixed top-0 right-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-void-2 md:hidden"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}

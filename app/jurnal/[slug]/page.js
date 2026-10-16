@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ARSIP, arsipBySlug } from '@/lib/arsip'
-
-const SITE = 'https://crave-noir.pintuweb.id'
+import { meta, SITE } from '@/lib/seo'
 
 export function generateStaticParams() {
   return ARSIP.map((a) => ({ slug: a.slug }))
@@ -12,12 +11,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
   const a = arsipBySlug(slug)
   if (!a) return {}
-  return {
-    title: `${a.judul} — Arsip Positive Crave`,
-    description: a.ringkas,
-    alternates: { canonical: `${SITE}/jurnal/${a.slug}` },
-    openGraph: { type: 'article' },
-  }
+  return meta({ title: a.judul, description: a.ringkas, path: `/jurnal/${a.slug}`, type: 'article' })
 }
 
 function Blok({ b }) {
